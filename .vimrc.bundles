@@ -60,6 +60,7 @@ Bundle 'saltstack/salt-vim'
 Bundle 'Konfekt/FastFold'
 Bundle 'Konfekt/FoldText'
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimproc.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

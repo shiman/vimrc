@@ -120,7 +120,6 @@ vnoremap . :normal .<CR>
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
 
-" TODO
 " Some helpers to edit mode
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
@@ -130,9 +129,13 @@ nnoremap <Leader>ev :vsp<Space>
 nnoremap <Leader>et :tabe<Space>
 nnoremap <Leader><Tab> :b#<CR>
 
+" Helpers for finding files
+nnoremap <Leader>pp :Unite file<CR>
+nnoremap <Leader>PP :Unite file buffer<CR>
+
 " Buffer Management
-nnoremap <Leader>bd :quit<CR>
-nnoremap <Leader>bb :ls<CR>
+nnoremap <Leader>bd :q<CR>
+nnoremap <Leader>bb :Unite buffer<CR>
 nnoremap <Leader>bp :bp<CR>
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>1 :1b<CR>
