@@ -130,12 +130,13 @@ nnoremap <Leader>et :tabe<Space>
 nnoremap <Leader><Tab> :b#<CR>
 
 " Helpers for finding files
-nnoremap <Leader>pp :Unite file<CR>
+nnoremap <Leader>pp :Unite -buffer-name=files -start-insert file file/new<CR>
 nnoremap <Leader>PP :Unite file buffer<CR>
+nnoremap <Leader>ack :Unite -no-empty -no-resize grep<CR>
 
 " Buffer Management
 nnoremap <Leader>bd :q<CR>
-nnoremap <Leader>bb :Unite buffer<CR>
+nnoremap <Leader>bb :Unite -buffer-name=buffers -quick-match buffer<CR>
 nnoremap <Leader>bp :bp<CR>
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>1 :1b<CR>
@@ -517,3 +518,12 @@ set completeopt=menu,preview,longest
     " e.g. Grep current file for <search_term>: Shell grep -Hn <search_term> %
     " }
 " }
+
+" C++ flycheck
+let g:syntastic_cpp_compiler_options = ' -std=c++11 '
+
+" Shortcut to run a shell command
+nnoremap <Leader>! :!<Space>
+
+" Shortcut to terminal
+noremap <C-d> :sh<CR>
