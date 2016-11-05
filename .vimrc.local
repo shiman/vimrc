@@ -1,7 +1,10 @@
+set nospell
 colorscheme despacio
 set background=dark
 let mapleader = "\<Space>"
+
 map <BS> :Commentary<CR>
+autocmd FileType cpp setlocal commentstring=//\ %s
 
 " Clear the highlighted search results
 nmap <silent> <leader>/ :nohl<CR>
@@ -9,33 +12,42 @@ nmap <silent> <leader>/ :nohl<CR>
 " Buffer Management
 nnoremap <Leader>bd :bd<CR>
 nnoremap <Leader>bD :bd!<CR>
-nnoremap <Leader>wc :q<CR>
 nnoremap <Leader>ww :w<CR>
 nnoremap <Leader>bb :Unite -buffer-name=buffers -start-insert buffer<CR>
 map <S-H> :bp<CR>
 map <S-L> :bn<CR>
-nnoremap <Leader>1 :1b<CR>
-nnoremap <Leader>2 :2b<CR>
-nnoremap <Leader>3 :3b<CR>
-nnoremap <Leader>4 :4b<CR>
-nnoremap <Leader>5 :5b<CR>
-nnoremap <Leader>6 :6b<CR>
-nnoremap <Leader>7 :7b<CR>
-nnoremap <Leader>8 :8b<CR>
-nnoremap <Leader>9 :9b<CR>
-nnoremap <Leader>0 :10b<CR>
+
+" Layout management
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+map <C-H> <C-W>h
+map <Leader>wd <C-W>q
+map <Leader>wD <C-W>q!
+map <silent> <C-W><Bar> :vsplit<CR>
+map <silent> <C-W><bSlash> :split<CR>
+map = <c-w>+  " Move boundary up
+map - <c-w>-  " Move boundary down
+map _ <c-w>_  " Make current split fullscreen
+
+" Emacs style in insertion mode
+map! <C-a> <Home>
+map! <C-e> <End>
+map! <C-f> <Right>
+map! <C-b> <Left>
 
 " Helpers for finding files
-nnoremap <Leader>ff :Unite -buffer-name=files -start-insert file file/new<CR>
+nnoremap <Leader>ff :Unite -buffer-name=files -start-insert file file/new file_mru<CR>
 nnoremap <Leader>pp :Unite -buffer-name=files -start-insert file file_rec/async:! file/new file_mru<CR>
 nnoremap <Leader>ack :Unite -no-empty -no-resize grep:.<CR>
 
 " Make Unite appear like ctrlp
- call unite#custom#profile('default', 'context', {
+call unite#custom#profile('default', 'context', {
  \   'start_insert': 1,
  \   'winheight': 10,
  \   'direction': 'botright',
  \ })
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 " Airline
 let g:airline_theme = 'distinguished'
@@ -55,6 +67,36 @@ set laststatus=2
 " Ycmd settings
 let g:ycm_confirm_extra_conf = 0
 map <F12> :YcmCompleter GoToDefinition<CR>
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 " Folding
 set foldmethod=syntax
+
+" Shortcut to terminal
+set shell=zsh
+noremap <silent> <C-d> :sh<CR>
+
+" GUI
+set guifont=Monaco:h12
+set guioptions-=L  " left scroll bar
+set guioptions-=r  " right scroll bar
+if OSX() && has("gui_running")
+    colorscheme solarized
+    set background=light
+    let g:airline_theme = 'solarized'
+    set guifont=Source\ Code\ Pro\ for\ Powerline:h18
+endif
+
+" Git
+nnoremap <silent> <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>gc :Gcommit<CR>
+nnoremap <silent> <Leader>gb :Gblame<CR>
+nnoremap <silent> <Leader>gl :Glog<CR>
+nnoremap <silent> <Leader>gp :Git push<CR>
+nnoremap <silent> <Leader>gr :Gread<CR>
+nnoremap <silent> <Leader>gw :Gwrite<CR>
+nnoremap <silent> <Leader>ge :Gedit<CR>
+" Mnemonic _i_nteractive
+nnoremap <silent> <Leader>gi :Git add -p %<CR>
+nnoremap <silent> <Leader>gg :SignifyToggle<CR>

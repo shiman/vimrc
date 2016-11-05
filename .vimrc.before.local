@@ -1,2 +1,3 @@
-let g:spf13_bundle_groups=['general', 'programming', 'misc', 'youcompleteme']
+let g:spf13_bundle_groups=['general', 'programming', 'misc', 'youcompleteme', 'python']
 let g:spf13_no_autochdir = 1
+let g:spf13_no_easyWindows = 1
