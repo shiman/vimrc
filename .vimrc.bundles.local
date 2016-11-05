@@ -1,0 +1,6 @@
+Bundle 'AlessandroYorba/Despacio'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Shougo/neomru.vim'
+Bundle 'jalcine/cmake.vim'
+UnBundle 'ctrlpvim/ctrlp.vim'
