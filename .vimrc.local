@@ -29,6 +29,7 @@ map <C-L> <C-W>l
 map <C-H> <C-W>h
 map <Leader>wd <C-W>q
 map <Leader>wD <C-W>q!
+map <silent> <Leader>wp :pc<CR>
 map <silent> <Leader><Bar> :vsplit<CR>
 map <silent> <Leader><bSlash> :split<CR>
 map = <c-w>+  " Move boundary up
