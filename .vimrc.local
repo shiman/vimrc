@@ -106,3 +106,6 @@ nmap <Leader>sh [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<C
 
 " Grep
 nnoremap <Leader>ps :Ack 
+
+" TagBar
+nnoremap <silent> <leader>bi :TagbarToggle<CR>
