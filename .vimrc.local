@@ -10,8 +10,8 @@ autocmd FileType cpp setlocal commentstring=//\ %s
 nmap <silent> <leader>/ :nohl<CR>
 
 " Buffer Management
-nnoremap <Leader>bd :bd<CR>  "close the buffer
-nnoremap <Leader>bD :bd!<CR>  "close the split
+nnoremap <Leader>bd :bd<CR>  " close the buffer
+nnoremap <Leader>bD :bd!<CR>  " close the split
 nnoremap <Leader>xd :w<CR>:bd<CR>
 nnoremap <Leader>ww :w<CR>
 nnoremap <Leader>bb :CtrlPBuffer<CR>
