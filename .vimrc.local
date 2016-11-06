@@ -10,13 +10,15 @@ autocmd FileType cpp setlocal commentstring=//\ %s
 nmap <silent> <leader>/ :nohl<CR>
 
 " Buffer Management
-nnoremap <Leader>bd :bd<CR>
-nnoremap <Leader>bD :bd!<CR>
+nnoremap <Leader>bd :bd<CR>  "close the buffer
+nnoremap <Leader>bD :bd!<CR>  "close the split
+nnoremap <Leader>xd :w<CR>:bd<CR>
 nnoremap <Leader>ww :w<CR>
 nnoremap <Leader>bb :CtrlPBuffer<CR>
 nnoremap <Leader><Tab> :b#<CR>
 map <S-H> :bp<CR>
 map <S-L> :bn<CR>
+let g:ctrlp_open_new_file = 'r'
 
 " Layout management
 map <C-J> <C-W>j
@@ -36,6 +38,8 @@ map! <C-a> <Home>
 map! <C-e> <End>
 map! <C-f> <Right>
 map! <C-b> <Left>
+map! <C-n> <Down>
+map! <C-p> <Up>
 
 " Helpers for finding files
 nnoremap <Leader>ff :CtrlP<CR>
