@@ -10,8 +10,10 @@ autocmd FileType cpp setlocal commentstring=//\ %s
 nmap <silent> <leader>/ :nohl<CR>
 
 " Buffer Management
-nnoremap <Leader>bd :bd<CR>  " close the buffer
-nnoremap <Leader>bD :bd!<CR>  " close the split
+" nnoremap <Leader>bd :bd<CR>  " close the buffer - BUGGY WITH NERDTREE
+" nnoremap <Leader>bD :bd!<CR>  " close the split - BUGGY WITH NERDTREE
+nnoremap <leader>bd :bp<CR>:bd #<CR> " close the buffer
+nnoremap <leader>bD :bp<CR>:bd! #<CR> " close the buffer
 nnoremap <Leader>xd :w<CR>:bd<CR>
 nnoremap <Leader>ww :w<CR>
 nnoremap <Leader>bb :CtrlPBuffer<CR>
@@ -43,7 +45,7 @@ map! <C-p> <Up>
 
 " Helpers for finding files
 nnoremap <Leader>ff :CtrlP<CR>
-nnoremap <Leader>pp :CtrlPMixed<CR>
+nnoremap <Leader>pp :CtrlPMRU<CR>
 nnoremap <Leader>ee :NERDTreeFind<CR>
 
 " Airline
