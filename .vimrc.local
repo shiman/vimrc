@@ -44,7 +44,6 @@ map! <C-p> <Up>
 " Helpers for finding files
 nnoremap <Leader>ff :CtrlP<CR>
 nnoremap <Leader>pp :CtrlPMixed<CR>
-" nnoremap <Leader>ack :Unite -no-empty -no-resize grep:.<CR> TODO
 nnoremap <Leader>ee :NERDTreeFind<CR>
 
 " Airline
