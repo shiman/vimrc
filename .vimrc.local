@@ -3,7 +3,7 @@ colorscheme despacio
 set background=dark
 let mapleader = "\<Space>"
 
-map <BS> :Commentary<CR>
+map <Leader>cl :Commentary<CR>
 autocmd FileType cpp setlocal commentstring=//\ %s
 
 " Clear the highlighted search results

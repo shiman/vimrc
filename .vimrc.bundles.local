@@ -1,4 +1,3 @@
 Bundle 'AlessandroYorba/Despacio'
 Bundle 'jalcine/cmake.vim'
-Bundle 'vim-scripts/Conque-GDB'
 UnBundle 'scrooloose/nerdcommenter'
