@@ -1,6 +1,0 @@
-let g:spf13_bundle_groups=['general', 'programming', 'misc', 'youcompleteme', 'python']
-let g:spf13_no_autochdir = 1
-let g:spf13_no_easyWindows = 1
-if OSX() && has("gui_running")
-    let g:vimshell_editor_command = '/opt/local/bin/mvim --servername=VIM --remote-tab-wait-silent'
-endif
