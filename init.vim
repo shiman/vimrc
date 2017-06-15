@@ -1,6 +1,5 @@
 set nocompatible
 call plug#begin('~/.config/nvim/plugged')
-Plug 'Shougo/neocomplete.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
@@ -17,10 +16,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'rhysd/vim-clang-format'
+
 call plug#end()
 
 " Fundamental settings
@@ -49,13 +50,6 @@ map <Leader>/ :Find<Space>
 map <Leader>sl :BTags<CR>
 map <Leader>bb :Buffers<CR>
 map <Leader>? :History<CR>
-
-" NeoSnippets
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
 
 " Easy Align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -157,3 +151,6 @@ map! <C-f> <Right>
 map! <C-b> <Left>
 map! <C-n> <Down>
 map! <C-p> <Up>
+
+" Ultisnippets
+let g:UltiSnipsExpandTrigger="<C-k>"
